@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <h6>Click below button to read the excel file</h6>
+    <button kendoButton (click)="onClick()" [disabled]="!buttonenable" style="background-color: #03b1fc; color:#fff; font-size: large;">Update Details</button>
+    <!-- <p>{{updatestatus | async ==true?"Update Completed":message}}</p> -->
+    <div *ngIf="updatestatus$==2">
+        <kendo-loader
+          [type]="loader.type"
+          [size]="loader.size"
+          style="color: #07b584;"
+        >
+        </kendo-loader>
+      </div>
+      <div *ngIf="updatestatus$==3">
+        <p color="tertiary" style="font-size: 13px;">Update Completed</p>
+      </div>
+
+</div>
